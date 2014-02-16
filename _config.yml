@@ -2,6 +2,6 @@ name: ED
 markdown: kramdown
 markdown_ext:  md
 pygments: true
-baseurl:     /
+baseurl: 
 url:         http://localhost:4000
 exclude: [bower_components, Gemfile, Gemfile.lock, less, '*.json', '*.rb', Gruntfile.js, README.md, node_modules ]
