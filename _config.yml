@@ -1,4 +1,4 @@
-markdown: kramdown
+markdown: maruku
 pygments: true
 baseurl:  
 url:      http://www.ebcomley.com
