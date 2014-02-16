@@ -1,4 +1,4 @@
 markdown: kramdown
 pygments: true
 baseurl:  
-url:      http://localhost:4000
+url:      http://www.ebcomley.com
