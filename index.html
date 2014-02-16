@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-	<html>
-	<head>
-			<meta charset="utf-8">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<title>ebcomley</title>
-			<link rel="stylesheet" href="">
-	</head>
-	<body>
-		<h1>edward b comley</h1>
-		<p>test</p>
-	</body>
-</html>
+---
+layout: default
+title: ebcomley.com
+---
+<ul>
+	{% for post in site.posts %}
+		<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+	{% else %}
+		<li>There are no posts.</li>
+	{% endfor %}
+</ul>
