@@ -1,0 +1,4 @@
+markdown: kramdown
+exclude: [bower_components, Gemfile, Gemfile.lock, less, '*.json', '*.rb', Gruntfile.js, README.md, node_modules ]
+pygments: true
+baseurl:
