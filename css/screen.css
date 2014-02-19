@@ -6536,3 +6536,16 @@ h6, .h6 {
     width: 50%;
   }
 }
+
+.main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .main {
+    float: left;
+    width: 100%;
+  }
+}

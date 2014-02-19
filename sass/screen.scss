@@ -28,4 +28,8 @@
 	@include make-sm-column(6);
 }
 
+.main {
+		@include make-sm-column(12);
+
+}
 
