@@ -2,10 +2,39 @@
 layout: default
 title: ebcomley.com
 ---
-<ul>
-	{% for post in site.posts %}
-		<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-	{% else %}
-		<li>There are no posts.</li>
-	{% endfor %}
-</ul>
+
+
+<div class="wrapper">
+	
+	<div class="content">
+
+      <div class="blog-header">
+        <h1 class="blog-title">ebcomley</h1>
+
+			<p>A little look inside my head.</p>
+
+      </div>
+
+		
+
+			<div class="grunt-posts">
+				
+			<ul class="nav nav-pills nav-stacked">
+				{% for post in site.posts %}
+					<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+				{% else %}
+					<li>There are no posts.</li>
+				{% endfor %}
+			</ul>
+
+			</div>
+
+
+
+	</div>
+
+
+
+</div>
+
+

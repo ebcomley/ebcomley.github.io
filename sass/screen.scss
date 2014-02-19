@@ -1,8 +1,31 @@
 // customize bootstrap variables here:
 @import "variables";
 @import "bootstrap";
+@import "blog";
 
-
-body {
-	background-color: #ccc;
+.wrapper {
+  @include container-fixed();
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
 }
+
+.content {
+	@include make-row();
+}
+
+.blog-header {
+	@include make-sm-column(12);
+}
+
+.grunt-posts{
+	@include make-sm-column(6);
+}
+
+
