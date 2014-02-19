@@ -1,33 +1,33 @@
 module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-push-release');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-shell');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    less: {
-      options: {
-          paths: ["bower_components/bootstrap/less", "less"],
-      },
-      development: {
-        // where the files go in development
-        files: {
-          "css/global.css": "less/global.less"
-        }
-      },//development
 
-      // production
+   compass: {
+
+      development: {
+        options: {
+          config: 'config.rb',
+          cssDir: 'css', // full fat
+        } // options
+      }, // development
+
       production: {
         options: {
-          paths: ["bower_components/bootstrap/less", "less"],
-          cleancss: true
-        },
-        files: {
-          "css/dist/global.min.css": "less/global.less"
-        }
-      } // production
-    }, // less
+          config: 'config_prod.rb',
+          cssDir: 'css/dist', // minified
+        } // options
+      }, // production
+
+
+    }, //compass
+
+
+
 
 
     jshint: {
@@ -68,16 +68,15 @@ module.exports = function(grunt) {
 
     watch: {
       
-      options: {
-        livereload: true,
-      }, //options
+      //options: {
+      //  livereload: true,
+      //}, //options
 
       jekyllSources: {
         files: [
           // capture all except css - add your own
           '*.html', '*.yml', 'assets/js/**.js',
           '_posts/**', '_includes/**', 'courses/**', 'css/**',
-
           ],
         tasks: 'shell:jekyll',
       },
@@ -91,6 +90,14 @@ module.exports = function(grunt) {
 
       // Add the following script to your HTML for livereload.
       // <script src="http://localhost:35729/livereload.js"></script>
+
+      sass: {
+        files: ['sass/*.scss'],
+        tasks: ['compass']
+      }, // sass
+
+
+
 
       scripts: {
         files: ['js/*.js'],
@@ -119,17 +126,7 @@ module.exports = function(grunt) {
         command: 'rm -rf _site/*; jekyll build',
         stdout: true
       }
-    },
-
-    connect: {
-      server: {
-        options: {
-          port: 8000,
-          base: './'
-        }
-      }
     }
-
 
 
   });
@@ -137,7 +134,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default Task is basically a rebuild
-  grunt.registerTask('default', ['concat', 'uglify', 'less', 'imagemin', 'shell', 'watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'imagemin','compass', 'shell', 'watch']);
 
   grunt.registerTask('dev', ['connect', 'watch']);
 
