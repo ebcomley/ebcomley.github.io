@@ -6470,6 +6470,54 @@ h6, .h6 {
   border-top: 1px solid #e5e5e5;
 }
 
+@font-face {
+  font-family: "southfont";
+  src: url('/fonts/southfont.eot');
+  src: url('/fonts/southfont.eot?#iefix') format("embedded-opentype"), url('/fonts/southfont.woff') format("woff"), url('/fonts/southfont.ttf') format("truetype"), url('/fonts/southfont.svg#southfont') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "southfont";
+    src: url('/fonts/southfont.svg#southfont') format("svg");
+}
+}
+[data-icon]:before {
+  content: attr(data-icon);
+}
+
+[data-icon]:before,
+.icon-usw-usw:before,
+.icon-usw-usw-logo:before,
+.icon-usw-usw-scurve:before {
+  display: inline-block;
+  font-family: "southfont";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-usw-usw:before {
+  content: "\f102";
+}
+
+.icon-usw-usw-logo:before {
+  content: "\f100";
+}
+
+.icon-usw-usw-scurve:before {
+  content: "\f101";
+}
+
 .wrapper {
   margin-right: auto;
   margin-left: auto;

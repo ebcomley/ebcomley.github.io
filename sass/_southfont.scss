@@ -1,0 +1,45 @@
+//
+// Icon Font: southfont
+//
+
+@font-face {
+  font-family: "southfont";
+  src: font-url("southfont.eot");
+  src: font-url("southfont.eot?#iefix") format("embedded-opentype"),
+       font-url("southfont.woff") format("woff"),
+       font-url("southfont.ttf") format("truetype"),
+       font-url("southfont.svg#southfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "southfont";
+    src: font-url("southfont.svg#southfont") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-usw-usw:before,
+.icon-usw-usw-logo:before,
+.icon-usw-usw-scurve:before {
+  display: inline-block;
+  font-family: "southfont";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-usw-usw:before { content: "\f102"; }
+.icon-usw-usw-logo:before { content: "\f100"; }
+.icon-usw-usw-scurve:before { content: "\f101"; }
